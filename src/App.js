@@ -38,7 +38,7 @@ function App() {
       });
 
       await fetch('https://cv-process-sys.vercel.app/parse-cv', {
-        method: 'POST',
+        method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           cloudinaryUrl: secureUrl,
