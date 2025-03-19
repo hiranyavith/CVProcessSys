@@ -43,8 +43,16 @@ async function addToGoogleSheet(data) {
 
 
         // Use the new auth method
+        // const useServiceAccountAuth = new JWT({
+        //     keyFile: './androidproject-449103-dac7101a8cd7',
+        //     scopes: [
+        //         'https://www.googleapis.com/auth/spreadsheets',
+        //     ],
+        // });
+
         const useServiceAccountAuth = new JWT({
-            keyFile: './androidproject-449103-f8044a3c5a41.json',
+            email: process.env.GOOGLE_CLIENT_EMAIL,
+            key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
             scopes: [
                 'https://www.googleapis.com/auth/spreadsheets',
             ],
