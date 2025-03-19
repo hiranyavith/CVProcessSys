@@ -154,7 +154,7 @@ async function sendWebHook(payload) {
     }
 }
 
-app.get("/parse-cv", async (req, resp) => {
+app.post("/parse-cv", async (req, resp) => {
     try {
         const { cloudinaryUrl, status, applicant_name, applicant_email } = req.body;
         if (!cloudinaryUrl) {
