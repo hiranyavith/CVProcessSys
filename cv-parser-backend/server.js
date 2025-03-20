@@ -10,7 +10,7 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const app = express();
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://cv-process-sys.vercel.app" }));
 
 app.use(express.json());
 
@@ -154,7 +154,7 @@ async function sendWebHook(payload) {
     }
 }
 
-app.post("/parse-cv", async (req, resp) => {
+app.post("/api/parse-cv", async (req, resp) => {
     try {
         const { cloudinaryUrl, status, applicant_name, applicant_email } = req.body;
         if (!cloudinaryUrl) {
@@ -221,7 +221,8 @@ app.post("/parse-cv", async (req, resp) => {
     }
 });
 
-const PORT = process.env.REACT_APP_PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}....`);
-})
+// const PORT = process.env.REACT_APP_PORT || 5000;
+// app.listen(PORT, () => {
+//     console.log(`Server running on http://localhost:${PORT}....`);
+// })
+module.exports = app;

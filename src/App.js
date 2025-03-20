@@ -37,7 +37,7 @@ function App() {
         uploadedAt: new Date().toISOString()
       });
 
-      await fetch('http://localhost:5000/parse-cv', {
+      await fetch('https://cv-process-sys.vercel.app/api/parse-cv', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

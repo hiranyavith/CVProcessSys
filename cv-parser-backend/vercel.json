@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "cv-parser-backend/api/parse-cv.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "cv-parser-backend/api/$1"
+      }
+    ]
+  }
+  
