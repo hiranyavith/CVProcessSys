@@ -37,7 +37,7 @@ function App() {
         uploadedAt: new Date().toISOString()
       });
 
-      await fetch('https://cv-process-sys.vercel.app/api/parse-cv', {
+      await fetch('https://cv-process-sys-git-hiranyenew-hiranye-vithanages-projects.vercel.app/api/parse-cv', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
